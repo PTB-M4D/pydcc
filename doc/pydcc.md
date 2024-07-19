@@ -75,12 +75,12 @@ if not dcco.status_report.is_loaded:
 
 The schema verification must be executed after loading the DCC.
 
-Verify DCC file according to the official XML shema [2] when internet connection is available. 
+Verify DCC file according to the official XML schema [2] when internet connection is available. 
 ```python
 dcco.verify_dcc_xml(online=True)
 ```
 
-VVerify the DCC file according to the official XML schema [2] when the internet connection is unavailable. 
+Verify the DCC file according to the official XML schema [2] when the internet connection is unavailable. 
 In this case, please make sure to download all required schema files to the local repository using the schema downloader class.
 ```python
 dcco.verify_dcc_xml(online=False)
@@ -123,7 +123,7 @@ dcco.get_signing_time()
 
 ## Calibration Date
 
-Returns calibration date as datetime object. Note that the DCC defines the start date (beginPerformanceDate) and the end date (endPerformanceDate) of calibration. The date retured by this API reffers to the end of calibration (endPerformanceDate).
+Returns calibration date as datetime object. Note that the DCC defines the start date (beginPerformanceDate) and the end date (endPerformanceDate) of calibration. The date returned by this API refers to the end of calibration (endPerformanceDate).
 ```python
 dcco.calibration_date()
 ```
@@ -141,6 +141,7 @@ Returns the name of the calibration laboratory.
 ```python
 dcco.calibration_laboratory_name()
 ```
+
 
 
 ## Links to other documents
@@ -195,10 +196,19 @@ serial_number = dcco.get_item_id_by_name('Serial no.')
 
 Try the example code in ../examples/read_identifications.py
 
+## Get metadata from DCC
 
+Metadata in a DCC includes information about the calibration, such as the basic calibration value, the basic conformity, or the data quality (QoX) parameters. This information can be retrieved using the `get_calibration_metadata` method.
 
+```python
+metadata = dcco.get_calibration_metadata(refType='QoX_parameter')
+for item in metadata:
+    print(item)
+```
 
-## Get the mendatory language
+Try the example code in ../examples/read_QoX_metadata.py
+
+## Get the mandatory language
 
 ```python
 dcco.mandatory_language()
