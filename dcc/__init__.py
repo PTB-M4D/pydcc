@@ -15,3 +15,4 @@
 from .dcc import DCC
 from .dcc import DCCStatusType
 from .dcc import DCCStatusReport
+from .dcc import DCCTrustStore
