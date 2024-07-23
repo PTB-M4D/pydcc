@@ -3,7 +3,7 @@
 # Python module for processing of digital calibration certificates (DCC)
 # according to https://www.ptb.de/dcc/
 #
-# Copyright (c) Siemens AG, 2024
+# Copyright (c) Siemens AG, 2021
 #
 # Authors:
 #  Andreas Tobola, Siemens AG

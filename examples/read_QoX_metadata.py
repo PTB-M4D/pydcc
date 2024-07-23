@@ -18,12 +18,8 @@
 
 
 import sys
-sys.path.append("../dcc/")
-# from dcc import DCC
 import numpy as np
-
-# TODO: REMOVE
-sys.path.append(r"D:\git_projects\pydcc")
+sys.path.append("../dcc/")
 from dcc.dcc import DCC
 
 
@@ -99,7 +95,7 @@ def get_all_quantities_from_list(list_refType, data):
 if __name__ == '__main__':
     
     # Load DCC and create the DCC object (dcco)
-    dcco = DCC('D:/git_projects/pydcc/data/dcc/dcc_gp_temperature_typical_v12_QoX.xml')
+    dcco = DCC('../data/dcc/dcc_gp_temperature_typical_v12_QoX.xml')
  
     if not dcco.status_report.is_loaded:
         print("Error: DCC was not loaded successfully!")
